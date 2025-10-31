@@ -16,12 +16,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val studentLoginButton = findViewById<Button>(R.id.btn_student_login)
+        val tlb = findViewById<Button>(R.id.btn_teacher_login)
 
 
-        studentLoginButton.setOnClickListener {
+        tlb.setOnClickListener {
 
-            val intent = Intent(this, StudentLogin::class.java)
+            val intent = Intent(this, TeacherLogin::class.java)
 
 
             startActivity(intent)

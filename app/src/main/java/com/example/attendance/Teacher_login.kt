@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 // Assume you have an activity named 'Student' (or whatever your dashboard is named)
-class StudentLogin : AppCompatActivity() {
+class TeacherLogin : AppCompatActivity() {
 
     // Removed unused import for VoiceInteractionSession
 
@@ -19,7 +19,7 @@ class StudentLogin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.student_login)
+        setContentView(R.layout.teacher_login)
 
 
         emailEditText = findViewById(R.id.et_email)
@@ -53,17 +53,36 @@ class StudentLogin : AppCompatActivity() {
             return
         }
 
-        if (email == "student@school.com" && password == "12345") {
+        if (email == "Teacher@email.com" && password == "2828") {
             // SUCCESSFUL LOGIN: Navigate to the 'Student' activity
             Toast.makeText(this, "Login successful", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this, Student::class.java)
+            val intent = Intent(this, TeacherLogin::class.java)
             startActivity(intent)
             finish()
 
         } else {
             Toast.makeText(this, "Invalid credentials. Please try again.", Toast.LENGTH_LONG).show()
             passwordEditText.text.clear()
+
+
+
+            val back = findViewById<Button>(R.id.btn_back)
+
+
+            back.setOnClickListener {
+
+                val intent = Intent(this, MainActivity::class.java)
+
+
+                startActivity(intent)}
         }
     }
 }
+
+
+
+
+
+
+

@@ -12,16 +12,5 @@ class Student : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.student)
 
-        val logoutbutton = findViewById<Button>(R.id.btn_logout)
-
-        logoutbutton.setOnClickListener {
-            val intent = Intent(this, StudentLogin::class.java)
-
-            startActivity(intent)
-        }
-
-
     }
-
-
 }
